@@ -1,0 +1,37 @@
+<%- include('partials/header') %>
+
+<div align="center">
+    <h1>Welcome <%=user.alias%></h1>
+    <% if(user.employees !== undefined) {%>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Phone number</th>
+            </tr>
+            <% user.employees.forEach(element => { %>
+            <tr>
+                <td><a><%=element.name%></a></td>
+                <td><%=element.address%></td>
+                <td><%=element.phone%></td>
+                <td>
+                    <form action="/deleteEmployee" method="POST">
+                        <button class="btn btn-danger" name="employee" value="<%=element.name%>">Delete</button>
+                    </form>
+                    <form action="/editEmployee" method="POST">
+                        <button class="btn btn-primary" name="employee" value="<%=element._id%>">Edit</button>
+                    </form>
+                </td>
+            </tr>
+            <%})%>
+        </table>
+    <%}%>
+    <div class="buttonContainer">
+        <a class="btn btn-dark btn-lg" href="/profile/addNew" role="button">Add new user</a>
+        <a class="btn btn-light btn-lg" href="/logout" role="button">Logout</a>
+    </div>
+</div>
+
+
+
+<%- include('partials/footer') %>

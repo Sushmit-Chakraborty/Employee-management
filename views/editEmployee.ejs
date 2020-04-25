@@ -1,0 +1,22 @@
+<%- include('partials/header') %>
+<div class="addNewContainer">
+    <h2 style="margin-bottom: 50px;">Add new employee details</h2>
+    <form action="/editEmployeeDetails" method="POST">
+    <div class="form-group">
+        <label>Name</label>
+        <input class="form-control" style="width: 400px;" name="employeeName" value="<%=employeeDetail.name%>" autocomplete="off">
+    </div>
+    <div class="form-group">
+        <label>Address</label>
+        <input class="form-control" style="width: 400px;" name="employeeAddress" value="<%=employeeDetail.address%>" autocomplete="off">
+    </div>
+    <div class="form-group">
+        <label>Phone number</label>
+        <input class="form-control" style="width: 400px;" name="employeePhone" value="<%=employeeDetail.phone%>" autocomplete="off">
+    </div>
+    <button type="submit" name="employeeId" value="<%=employeeDetail._id%>" class="btn btn-dark" style="background-color: purple;">Save</button>
+    </form>
+</div>
+
+
+<%- include('partials/footer') %>

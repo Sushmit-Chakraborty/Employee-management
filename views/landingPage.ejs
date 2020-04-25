@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+<div class="almost-there">
+    <div class="center-this">
+        <h1>Almost there!</h1>
+        <h2>Pick a username and we should be good to go!</h2>
+    </div>
+</div>
+
+<form action="/landingPage" method="POST">
+    <div class="usernameContainer">
+        <h3>Username</h3>
+        <input type="text" class="inputbox" name="alias" placeholder="Username" autocomplete="off"><br>
+        <button type="submit" class="btn btn-dark" style="background-color: rgb(119, 119, 184); margin-top: 20px; margin-left: 3px;">Submit</button>
+    </div>
+</form>
